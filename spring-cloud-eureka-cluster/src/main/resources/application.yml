@@ -1,0 +1,49 @@
+
+---
+spring:
+  application:
+    name: spring-cloud-eureka
+  profiles: peer1
+server:
+  port: 8000
+  # context-path: /eureka
+eureka:
+  instance:
+    hostname: pee
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8001/eureka/,http://peer3:8002/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+---
+spring:
+  application:
+    name: spring-cloud-eureka
+  profiles: peer2
+server:
+  port: 8001
+  # context-path: /eureka
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8000/eureka/,http://peer3:8002/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+---
+spring:
+  application:
+    name: spring-cloud-eureka
+  profiles: peer3
+server:
+  port: 8002
+  # context-path: /eureka
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
