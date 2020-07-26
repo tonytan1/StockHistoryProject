@@ -1,0 +1,32 @@
+version: '3'
+services:
+  # 指定服务名称
+  mysql:
+    container_name: ty-mysql
+    image: mysql:5.7
+    ports:
+      - 3306:6666
+    volumes:
+      - /tmp/mysql/log:/var/log/mysql
+      - /tmp/mysql/data:/var/lib/mysql
+      - /tmp/mysql/conf:/etc/mysql
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_ROOT_HOST: 'test'
+    restart: always
+  stockserver:
+    restart: always
+    build:
+      context: /tmp/stock
+      dockerfile: /tmp/stock/dockerfile
+    working_dir: /tmp/stock
+    # 指定服务运行的端口
+    ports:
+      - 7077:7077
+    expose:
+      - 7077
+    depends_on:
+      - mysql
+    command:
+      mvn clean spring-boot:run -Dspring-boot.run.profiles=docker
