@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "symbol_history")
+@Table(name = "symbol_history",indexes = {@Index(columnList = "date")})
 public class StockHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +36,7 @@ public class StockHistory {
     int volume;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    Date date;
+    Date date; 
 
     public StockHistory(){};
 
