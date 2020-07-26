@@ -22,4 +22,5 @@
 # setting folder
 .settings
 .project
+.classpath
 target
