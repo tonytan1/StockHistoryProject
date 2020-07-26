@@ -18,3 +18,8 @@
 *.zip
 *.tar.gz
 *.rar
+
+# setting folder
+.settings
+.project
+target
