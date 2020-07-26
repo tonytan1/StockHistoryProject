@@ -5,11 +5,11 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.aqm.stock.DO.StockHistoryDO;
+import com.aqm.stock.DO.ValidList;
 import com.aqm.stock.annotation.AuthToken;
 import com.aqm.stock.entity.StockHistory;
 import com.aqm.stock.model.ResponseEntity;
-import com.aqm.stock.DO.StockHistoryDO;
-import com.aqm.stock.DO.ValidList;
 import com.aqm.stock.service.StockService;
 
 import org.slf4j.Logger;
@@ -20,6 +20,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +42,7 @@ public class StockController {
     private StockService stockService;
 
     @AuthToken
-    @PostMapping(value = "/aqm/get/{symbol}")
+    @RequestMapping(value = "/aqm/get/{symbol}", method = {RequestMethod.GET, RequestMethod.POST})
     @ApiOperation("get stock history by symbol and date range(inclusive)")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", name = "Authorization", value = "Authorization token", example = "AQM666", required = true),
@@ -77,7 +79,7 @@ public class StockController {
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "header", name = "Authorization", value = "Authorization token", example = "AQM666", required = true),
             @ApiImplicitParam(paramType = "path", name = "symbol", value = "symbol name", example = "MSFT", required = true) })
-    @PostMapping(value = "/aqm/delete/{symbol}")
+    @RequestMapping(value = "/aqm/delete/{symbol}", method={RequestMethod.POST, RequestMethod.DELETE})
     @ApiOperation("delete stock history records by symbol ")
     public ResponseEntity deleteStockHistory(@PathVariable("symbol") String symbol) {
         Boolean res = stockService.deleteStockHistory(symbol);
