@@ -24,7 +24,7 @@ Other functions:
 It also integrate with swagger 2 as a restful API documention.
 Besides, docker-compose.yaml and dockerfile is created for docker deployment.
 
-## Part3: Spring-cloud-eureka-cluster folder
+## Part3: Spring-cloud-eureka-cluster
 As the eureka server cluster, it provide high avialiblity of service registry and service lookup. 
 
 ![alt text](./md_img/registry_cluster.png "registry cluster")
