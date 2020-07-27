@@ -42,7 +42,7 @@ public IRule iRule() {
 	return new WeightedResponseTimeRule();
 }
 ```
-Finally, it archives the goal as following picture.
+Finally, it achieves the goal as following picture.
 
 ![alt text](./md_img/eureka_architecture.png "registry cluster")
 
