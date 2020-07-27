@@ -15,7 +15,7 @@ The number of records is too large for one mysql table. If the query response ti
 ## Part2: stock 
 ![alt text](./md_img/swagger2.png "API list in swagger2")
 
-This folder contains all backend services including get/update/delete stock history APIs. For update stock history API, query historical price by symbols and time range. It is implemented by multi-threading and batch save/update. 
+This folder contains all backend services including get/update/delete stock history APIs. For update stock history API,  it is implemented by multi-threading and batch save/update. 
 
 Other functions:
 - API token authorization. It applied a self-defined annanotation @AuthToken and a AOP interceptor to do the validation.
