@@ -47,7 +47,7 @@ Finally, it archives the goal as following picture.
 ![alt text](./md_img/eureka_architecture.png "registry cluster")
 
 ## TO DO 
-- config the Docker/Docker compose on my local machine. (tried but failed)
+- config the Docker/Docker compose on my local machine and then share the docker images. (tried but failed)
 - divide the stocks into different types : derivatives etc. 
 - Integration with mockito for unit test.  [mockito](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html#0).
 - table partitioning/sharding. Try the [ShardingSphere](https://shardingsphere.apache.org/). 
