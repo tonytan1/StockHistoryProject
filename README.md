@@ -22,7 +22,10 @@ Other functions:
 - Global exception handler and unified response format.
 
 It also integrate with swagger 2 as a restful API documention.
-Besides, docker-compose.yaml and dockerfile is created for docker deployment.
+Besides, implement the dokerfile script and complete docker deployment.
+
+![alt text](./md_img/docker.png "docker")
+
 
 ## Part3: Spring-cloud-eureka-cluster
 As the eureka server cluster, it provide high avialiblity of service registry and service lookup. 
@@ -47,7 +50,6 @@ Finally, it achieves the goal as following picture.
 ![alt text](./md_img/eureka_architecture.png "registry cluster")
 
 ## TO DO 
-- config the Docker/Docker compose on my local machine and then share the docker images. (tried but failed)
 - divide the stocks into different types : derivatives etc. 
 - Integration with mockito for unit test.  [mockito](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html#0).
 - table partitioning/sharding. Try the [ShardingSphere](https://shardingsphere.apache.org/). 
