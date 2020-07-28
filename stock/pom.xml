@@ -10,8 +10,8 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aqm</groupId>
-	<artifactId>stock</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>stock-server</artifactId>
+	<version>1</version>
 	<name>stock</name>
 	<description>Demo stock history API project for Spring Boot</description>
 
