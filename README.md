@@ -15,14 +15,13 @@ The number of records is too large for one mysql table. If the query response ti
 ## Part2: stock 
 ![alt text](./md_img/swagger2.png "API list in swagger2")
 
-This folder contains all backend services including get/update/delete stock history APIs. For update stock history API,  it is implemented by multi-threading and batch save/update. 
+This folder contains all backend services including get/update/delete stock history APIs. For update stock history API,  it is implemented by multi-threading and batch save/update. It also integrated with swagger 2 as a restful API documention.
 
 Other functions:
 - API token authorization. It applied a self-defined annanotation @AuthToken and a AOP interceptor to do the validation.
 - Global exception handler and unified response format.
 
-It also integrate with swagger 2 as a restful API documention.
-Besides, implement the dokerfile script and complete docker deployment.
+For docker deployment, implement the dokerfile script and deploy the mysql and application to different containers.
 
 ![alt text](./md_img/docker.png "docker")
 
